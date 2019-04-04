@@ -1,7 +1,6 @@
 #!/usr/bin/python
 #https://stro.io/netbox-api-integration-with-python-and-powershell/
 #https://netbox.readthedocs.io/en/stable/api/working-with-secrets/
-#http://localhost:32769/api/secrets/secrets/?device_id=1
 import requests
 ####VARIABLES#####
 url = "http://localhost:32769"
@@ -16,10 +15,8 @@ pathKeyRsa = "/home/rancid/var/lib/rancid/key/rsa"
 headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Accept': 'application/json',
-    #'Authorization': 'Token 0123456789abcdef0123456789abcdef01234567',
     'Authorization': token,
 }
-#keyFile = open("/home/rancid/var/lib/rancid/key/rsa", "r")
 keyFile = open(pathKeyRsa, "r")
 key = {
     'private_key' : keyFile.read()
